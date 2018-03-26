@@ -1,0 +1,7 @@
+<% if @order.errors.any? || @order_item.errors.any? %>
+alert("not valid.");
+<% puts @order.user %>
+<% puts @order.errors.full_messages %>
+<% else %>
+  $(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text') %>")
+<% end %>

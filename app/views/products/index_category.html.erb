@@ -1,0 +1,19 @@
+<% if !@category.nil? %>
+  <h1> <%= @category.name %> </h1>
+  <h4> <%= @category.desc %> </h4>
+  <br>
+<% else %>
+  <h1> All Products </h1>
+<% end %>
+<%= will_paginate %>
+<div class="container">
+    <% @products.each_slice(3) do |products| %>
+          <div class="row">
+            <% products.each do |product| %>
+                <%= render "product_box", product: product, order_item: @order_item %>
+            <% end %>    
+          </div>
+          <hr/>
+  <% end %>
+</div>
+<%= will_paginate %>

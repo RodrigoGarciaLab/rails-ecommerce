@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  All our products!
+</p>
+
+<h3> Products under this category </h3>
+	<% Product.all.each do |product| %>
+<li> <%= product.name %> </li>
+<% end %>

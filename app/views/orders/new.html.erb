@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(current_order) do |f| %>
+      <%= render 'shared/error_messages' , object: f.object %>
+      
+      <%= f.label :subtotal %><%= f.object.subtotal%>
+    
+      <%= f.label :address %>
+      <%= f.text_field :address, class: 'form-control' %>
+
+      <%= f.hidden_field :user_id, value: current_user.id %>
+
+      <%= f.submit "Place your order", class: "btn btn-primary" %>
+    <% end %>
+    
+  </div>
+</div>
